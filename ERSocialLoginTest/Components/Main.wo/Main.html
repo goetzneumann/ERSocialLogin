@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+	<head>
+		<title>Untitled</title>
+	</head>
+	<body>
+<wo:FacebookLogin callBackHandlerClassName="er.sltest.components.SLCallBackTest" /> | 
+<wo:TwitterLogin callBackHandlerClassName="er.sltest.components.SLCallBackTest" /> |
+<wo:GoogleLogin  callBackHandlerClassName="er.sltest.components.SLCallBackTest" />
+<wo:condition condition = "$session.facebookUser">
+<div style="border:1px solid #000">
+<h1>Loged in via Facebook</h1>
+<table>
+<tr><th>Vorname</th><td><wo:string value="$session.facebookUser.firstName" /></td></tr>
+<tr><th>Mittename</th><td><wo:string value="$session.facebookUser.middleName" /></td></tr>
+<tr><th>Nachname</th><td><wo:string value="$session.facebookUser.lastName" /></td></tr>
+<tr><th>Birthday</th><td><wo:string value="$session.facebookUser.birthday" /></td></tr>
+<tr><th>locale</th><td><wo:string value="$session.facebookUser.locale" /></td></tr>
+<tr><th>verified</th><td><wo:string value="$session.facebookUser.verified" /></td></tr>
+<tr><th>picture</th><td><wo:string value="$session.facebookUser.pictureURL" /></td></tr>
+<tr><th>Hometown</th><td><wo:string value="$session.facebookUser.hometown" /></td></tr>
+<tr><th>Email</th><td><wo:string value="$session.facebookUser.email" /></td></tr>
+<tr><th>Id</th><td><wo:string value="$session.facebookUser.id" /></td></tr>
+<tr><th>Facebook_id</th><td><wo:string value="$session.facebookUser.facebookId" /></td></tr>
+<tr><th>Gender</th><td><wo:string value="$session.facebookUser.gender" /></td></tr>
+</table>
+</div>
+</wo:condition>
+<wo:condition condition = "$session.googleUser">
+<div style="border:1px solid #000">
+<h1>Loged in via Google</h1>
+<table>
+<tr><th>Nickname</th><td><wo:string value="$session.googleUser.nickName" /></td></tr>
+<tr><th>Vorname</th><td><wo:string value="$session.googleUser.firstName" /></td></tr>
+<tr><th>Mittename</th><td><wo:string value="$session.googleUser.middleName" /></td></tr>
+<tr><th>Nachname</th><td><wo:string value="$session.googleUser.lastName" /></td></tr>
+<tr><th>Birthday</th><td><wo:string value="$session.googleUser.birthday" /></td></tr>
+<tr><th>Language</th><td><wo:string value="$session.googleUser.language" /></td></tr>
+<tr><th>Location</th><td><wo:string value="$session.googleUser.location" /></td></tr>
+<tr><th>verified</th><td><wo:string value="$session.googleUser.verified" /></td></tr>
+<tr><th>picture</th><td><wo:string value="$session.googleUser.pictureURL" /></td></tr>
+<tr><th>Email</th><td><ul><wo:repetition list = "$session.googleUser.emails" item="$currentEmailInformation"><li><wo:string value="$currentEmailInformation.email" /> (<wo:string value="$currentEmailInformation.type" />, <wo:string value="$currentEmailInformation.primary" />)</li></wo:repetition></ul></td></tr>
+<tr><th>Id</th><td><wo:string value="$session.googleUser.id" /></td></tr>
+<tr><th>Gender</th><td><wo:string value="$session.googleUser.gender" /></td></tr>
+</table>
+</div>
+</wo:condition>
+<wo:condition condition = "$session.twitterUser">
+<div style="border:1px solid #000">
+<h1>Loged in via Twitter</h1>
+<table>
+<tr><th>Name</th><td><wo:string value="$session.twitterUser.name" /></td></tr>
+<tr><th>Screenname</th><td><wo:string value="$session.twitterUser.screenName" /></td></tr>
+<tr><th>picture</th><td><wo:string value="$session.twitterUser.pictureURL" /></td></tr>
+<tr><th>language</th><td><wo:string value="$session.twitterUser.language" /></td></tr>
+<tr><th>Location</th><td><wo:string value="$session.twitterUser.location" /></td></tr>
+<tr><th>Id</th><td><wo:string value="$session.twitterUser.id" /></td></tr>
+</table>
+</div>
+</wo:condition>
+	</body>
+</html>
